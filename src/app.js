@@ -19,6 +19,9 @@ app.get("/rest", (req, res) => {
 app.post("/pello", (req, res) => {
     res.send("pello pello pelloooo");
 });
+app.patch("/Lello", (req, res) => {
+    res.send("pello Lello selloooo");
+});
 // Start the server
 app.listen(8000, () => {
     console.log("Server running on port 8000");
