@@ -9,15 +9,11 @@ route.get("/admins/getdata", (req, res) => {
     res.send("send all data");
 });
 
+route.use(express.json());
+
 route.post("/signup" ,async(req,res)=>{
     
-    const user = new User({
-        FirstName:"Abhishek",
-        LastName:"Verma",
-        Contact:"8299002860",
-        Age:"22",
-        Gender:"Male"
-    }); 
+    const user = new User(req.body); 
     await user.save();
     res.send("user added successfully")
 });
